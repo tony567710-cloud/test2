@@ -1,0 +1,10 @@
+name: "project"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./tomcat.dockerfile
+      args:
+        - WAR_FILE=labboot-back/target/labboot-back.war
+    ports:
+      - "9080:8080"

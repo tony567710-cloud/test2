@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+<!--
+        System.out.println("findById begin");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        System.out.println("findById wake up");
+-->
+    <button onclick="doClick()">XMLHttpRequest</button>
+    <script>
+        var xhr = new XMLHttpRequest();
+        function doClick() {
+            console.log("doClick() begin");
+            xhr.open("GET", "http://localhost:8080/ajax/pages/products/1");
+            xhr.send();
+            console.log("doClick() end");
+            if(xhr.status===200) {
+                console.log("....");
+            }
+        }
+    </script>
+</body>
+</html>

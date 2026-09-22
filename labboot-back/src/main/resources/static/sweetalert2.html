@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise & async/await</title>
+</head>
+<body>
+    
+    <h3>promise & async/await</h3>
+    <button onclick="func01()">promise</button>
+    <button onclick="func02()">async/await</button>
+    <script src="https://unpkg.com/sweetalert2@11.26.25/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function func01() {
+            Swal.fire({
+                title: "func01 question?",
+                showDenyButton: true,
+                allowOutsideClick: false,
+            }).then((result) => {
+                if(result.isConfirmed) {
+                    console.log("執行promise任務");
+                }
+            });
+        }
+        async function func02() {
+            const result = await Swal.fire({
+                title: "func02 question?",
+                showDenyButton: true,
+                allowOutsideClick: false,
+            });
+            if(result.isConfirmed) {
+                console.log("執行async/await任務");
+            }
+        }
+    </script>
+</body>
+</html>

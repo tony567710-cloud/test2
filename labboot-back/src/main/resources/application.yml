@@ -1,0 +1,33 @@
+jwt:
+    token:
+        expire: 10
+
+spring:
+    application:
+        name: labboot-back
+
+    profiles:
+        validate: false
+        active: '@xxx@'
+
+    # jackson
+    jackson:
+        date-format: yyyy-MM-dd
+        time-zone: Asia/Taipei
+
+    # datasource
+    datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://localhost:1433;database=java;trustServerCertificate=true;
+        username: sa
+        password: P@ssw0rd
+
+    #JPA
+    jpa:
+        database-platform: org.hibernate.dialect.SQLServerDialect
+        show-sql: true
+        hibernate:
+            ddl-auto: validate
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
