@@ -8,3 +8,11 @@ services:
         - WAR_FILE=labboot-back/target/labboot-back.war
     ports:
       - "9080:8080"
+  frontend:
+    build:
+      context: .
+      dockerfile: ./nginx.dockerfile
+      args:
+        - PUBLISH_DIR=labvue-front/dist
+    ports:
+      - "9173:80"
