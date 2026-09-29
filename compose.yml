@@ -12,7 +12,7 @@ services:
       dockerfile: ./nginx.dockerfile
       args:
         - PUBLISH_DIR=labvue-front/dist
-proxy:
+  proxy:
     build:
       context: ./reverse-proxy/
       dockerfile: ./caddy.dockerfile
