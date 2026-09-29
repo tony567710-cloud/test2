@@ -14,7 +14,7 @@ services:
         - PUBLISH_DIR=labvue-front/dist
 proxy:
     build:
-      context: ./resverse-proxy/
+      context: ./reverse-proxy/
       dockerfile: ./caddy.dockerfile
     ports:
       - "9000:80"
